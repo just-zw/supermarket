@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <router-view></router-view>
+<tapbar>
+ 
+ <tapbaritem path='/main'> </tapbaritem>
+  <tapbaritem path='/my'></tapbaritem>
+  <tapbaritem path='/shooping'></tapbaritem>
+  <tapbaritem path='/sort'></tapbaritem>
+  
+</tapbar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import tapbar from 'components/common/tapbar';
+import tapbaritem from 'components/common/tapbaritem'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+tapbar,
+tapbaritem,
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import 'assets/css/mynormal.css';
 </style>
