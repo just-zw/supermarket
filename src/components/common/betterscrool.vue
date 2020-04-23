@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap" ref="bsc">
+  <div class="wrapper" ref="bsc">
     <div class="continer">
       <slot></slot>
     </div>
@@ -8,6 +8,7 @@
 
 <script>
 import BScroll from 'better-scroll'
+import {debounce} from 'components/common/debounce'
 export default {
   props:{
 probeType:{
@@ -22,21 +23,29 @@ data(){
 
 },
 mounted(){
-  console.log(this.probeType)
+
 this.bscroll=new BScroll(this.$refs.bsc,{
   probeType:this.probeType,
   pullUpLoad:true,
   click:true
 });
+    let fresh=debounce(this.bscroll.refresh,500)
+  this.$emit('showfresh',fresh)
 this.bscroll.on('scroll',data=>{
   this.$emit('scroll',data)
 })
 this.bscroll.on('pullingUp',()=>{
-  console.log(111)
+  console.log(22)
+  let page=2
+  this.$emit('pullingUp',page)
+  page=page+1
+  let that=this
  setTimeout(function(){
-this.bscroll.finishPullUp()
+that.bscroll.finishPullUp()
  },3000)
-})
+});
+
+
 } 
 }
 </script>

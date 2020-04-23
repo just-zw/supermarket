@@ -1,8 +1,10 @@
 <template>
   <div class="tapcontrol">
     <div class="tapcontrolitem" v-for="(item,index) in arrays" :key="index" @click="add(index)" :class='{active:currentindex==index}'>
-      <div>{{item}}</div>
-      <span></span>
+      <div>{{item}}
+        <span></span>
+      </div>
+      
     </div>
   </div>
 </template>
@@ -22,7 +24,7 @@ data(){
 },
 methods:{
   add(index){
-this.currentindex=index;
+/* this.currentindex=index; */
  this.$emit('showdata',index)
   },
 
@@ -33,13 +35,12 @@ this.currentindex=index;
 
 <style scoped>
 .tapcontrol{
-  position: sticky;
-  top: 30px;
   display: flex;
   width: 100%;
-  height: 20px;
-  line-height: 20px;
-  text-align: center
+  height: 50px;
+  line-height:40px;
+  text-align: center;
+    background: white;
 }
 .tapcontrol .tapcontrolitem{
   flex: 1;
@@ -49,7 +50,7 @@ this.currentindex=index;
   color: pink;
 }
 .tapcontrol .active span{
-  border-bottom: 1px solid pink;
+  border-bottom: 2px solid pink;
   display: block;
   text-align: center
 }

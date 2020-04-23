@@ -1,11 +1,14 @@
 <template>
-  <div class="lunboitem"><slot></slot></div>
+  <div class="lunboitem">
+    <a :href="imglink"><slot></slot></a>
+    
+    </div>
 </template>
 
 <script>
 export default {
 props:{
-  imgurl:{
+  imglink:{
     type:String
   }
 }
@@ -16,12 +19,11 @@ props:{
 .lunboitem{
 display: inline-block;
   width: 100%;
-  height: 150px;
+  height: 200px;
   border: 0px
 }
 .lunboitem img{
   width: 100%;
-  height: 150px;
-  display: block
+  height: 200px;
 }
 </style>

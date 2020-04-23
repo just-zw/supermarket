@@ -21,9 +21,9 @@ export default {
   text-align: center;
 /*   margin-top:-40px;
   margin-left: 87%; */
-  position: absolute;
-  bottom: 40px;
+  position: fixed;
+bottom: 60px;
   right: 20px;
-
+background: floralwhite;
 }
 </style>

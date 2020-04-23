@@ -33,8 +33,8 @@ this.$router.push(this.path)
 
 }
 .box{
-  margin: 0 auto;
-
+  margin: 8px auto;
+height: 50px;
 }
 
 </style>

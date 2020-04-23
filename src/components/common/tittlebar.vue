@@ -23,6 +23,10 @@ export default {
   display: flex;
   width: 100%;
 
+
+ height: 48px;
+  line-height: 48px;
+
 }
 .left{
   flex: 1
